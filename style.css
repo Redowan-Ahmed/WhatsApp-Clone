@@ -9,11 +9,11 @@
 
 ::-webkit-scrollbar {
     width: 6px;
-  }
-   
-  ::-webkit-scrollbar-thumb {
-    background: #c9cbcf; 
-  }
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c9cbcf;
+}
 
 /* Variables */
 
@@ -93,7 +93,7 @@ a {
 }
 
 .selected:hover {
-    background-color: #f1f1f1!important;
+    background-color: #f1f1f1 !important;
 }
 
 /* Main */
@@ -168,7 +168,8 @@ a {
     align-items: center;
     justify-content: space-between;
     height: 5.563rem;
-    padding: 0 var(--pepadding);;
+    padding: 0 var(--pepadding);
+    ;
 }
 
 .wininfo div:last-child p {
@@ -512,7 +513,7 @@ a {
 }
 
 .convebottom .tool:first-child:active,
-.convebottom > .tool:active {
+.convebottom>.tool:active {
     background-color: transparent;
 }
 
@@ -555,7 +556,7 @@ a {
     padding: .15rem .4rem;
 }
 
-.thereply > p {
+.thereply>p {
     height: 100%;
     display: flex;
     align-items: center;
@@ -606,7 +607,7 @@ a {
 }
 
 .senderContainer .sender:first-child .thereply::before {
-    border-color: #d5ffb1 transparent transparent transparent;   
+    border-color: #d5ffb1 transparent transparent transparent;
 }
 
 .emoji {
@@ -676,7 +677,7 @@ a {
     width: 1rem;
     right: -.5rem;
     cursor: pointer;
-    opacity: 1!important;
+    opacity: 1 !important;
 }
 
 .arrowhover img,
@@ -744,25 +745,28 @@ a {
     }
 }
 
-.hide{
-    display: none!important;
+.hide {
+    display: none !important;
 }
 
-.contacts{
+.contacts {
     width: 40%;
     height: 100vh;
     overflow-y: scroll;
 }
-.formInputSize{
+
+.formInputSize {
     width: 100%;
 }
-form > button{
+
+form>button {
     background: #dadada;
     padding: 0px;
     width: 10%;
     border-radius: 10px;
 }
-.toggel{
+
+.toggel {
     padding: 12px 20px;
     border: none;
     font-weight: 600;
@@ -770,21 +774,25 @@ form > button{
     cursor: pointer;
 }
 
-.senderID{
+.senderID {
     background-color: #25D366;
     color: #fff;
 }
+
 .receiverID {
     background-color: #3325d3;
     color: #fff;
 }
+
 .clear {
     background-color: red;
     color: #fff;
 }
-.disabled{
+
+.disabled {
     opacity: 0.2;
 }
-button{
+
+button {
     cursor: pointer;
 }

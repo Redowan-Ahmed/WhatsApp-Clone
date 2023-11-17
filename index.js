@@ -1,10 +1,8 @@
-
-
 const close = document.querySelector('.winclose').addEventListener('click', closeFun)
 const sidebar = document.querySelector('#contacts')
 
 
-function closeFun(e){
+function closeFun(e) {
     const closeItem = document.querySelector('.window.blue').className = 'hide'
     localStorage.setItem("blueNotification", 'false');
     console.log('working')
@@ -12,37 +10,37 @@ function closeFun(e){
 
 const blueNotificationStatus = localStorage.getItem('blueNotification')
 
-if (blueNotificationStatus){
+if (blueNotificationStatus) {
     document.querySelector('.window.blue').className = 'hide'
 }
 
-const sidebarStatus =  localStorage.getItem('sidebarStatus')
-if (sidebarStatus == 'false'){
+const sidebarStatus = localStorage.getItem('sidebarStatus')
+if (sidebarStatus == 'false') {
     sidebar.className = 'hide'
 }
 
 const hideSidebar = document.querySelector('.hideSidebar').addEventListener('click', hideSidebarFun)
 function hideSidebarFun(e) {
-    if ( localStorage.getItem('sidebarStatus') == 'false' ){
+    if (localStorage.getItem('sidebarStatus') == 'false') {
         console.log('Closed ')
         sidebar.className = 'contacts'
         localStorage.setItem('sidebarStatus', 'true')
-    }else{
-    sidebar.className = 'hide'
-    const button = e.target
-    console.log(button)
-    localStorage.setItem('sidebarStatus', 'false')
-    button.parentElement.setAttribute('title', 'Show Sidebar')
-}
+    } else {
+        sidebar.className = 'hide'
+        const button = e.target
+        console.log(button)
+        localStorage.setItem('sidebarStatus', 'false')
+        button.parentElement.setAttribute('title', 'Show Sidebar')
+    }
 }
 
 let user = document.querySelector('#user')
 user.addEventListener('click', (e) => {
-    if (user.getAttribute('title') == 'Sender'){
+    if (user.getAttribute('title') == 'Sender') {
         user.className = 'toggel receiverID';
         user.setAttribute('title', 'Receiver')
         user.innerHTML = 'Receiver'
-    }else{
+    } else {
         user.className = 'toggel senderID';
         user.setAttribute('title', 'Sender')
         user.innerHTML = 'Sender'
@@ -53,16 +51,16 @@ user.addEventListener('click', (e) => {
 let conversaionBox = document.querySelector('.convemessages')
 
 const inputform = document.querySelector('#massageForm');
-inputform.addEventListener('submit', (e)=>{
+inputform.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const masasgeInput = document.querySelector('input.formInputSize')
 
-    if (masasgeInput.value){
-    const currentDate = Date().toLocaleString();
-    if (user.getAttribute('title')== 'Sender'){
-        const createMassage =
-        `<div class="senderContainer arrowm">
+    if (masasgeInput.value) {
+        const currentDate = Date().toLocaleString();
+        if (user.getAttribute('title') == 'Sender') {
+            const createMassage =
+                `<div class="senderContainer arrowm">
             <div class="sender mepop">
                 <div class="thereply">
                     <p>${masasgeInput.value}</p>
@@ -78,12 +76,12 @@ inputform.addEventListener('submit', (e)=>{
                 </div>
             </div>
         </div>`
-        let createTag = document.createElement('div');
-        createTag.className = "senderContainer arrowm";
-        createTag.innerHTML = createMassage;
-        conversaionBox.appendChild(createTag)
-    }else{
-        const createMassage = `
+            let createTag = document.createElement('div');
+            createTag.className = "senderContainer arrowm";
+            createTag.innerHTML = createMassage;
+            conversaionBox.appendChild(createTag)
+        } else {
+            const createMassage = `
             <div class="reciver mepop">
                 <div class="thereply">
                     <p>${masasgeInput.value}</p>
@@ -101,16 +99,16 @@ inputform.addEventListener('submit', (e)=>{
                     </div>
                 </div>
             </div>`
-        let createTag = document.createElement('div');
-        createTag.className = "receiverContainer arrowm";
-        createTag.innerHTML = createMassage;
-        conversaionBox.appendChild(createTag)
-    }
+            let createTag = document.createElement('div');
+            createTag.className = "receiverContainer arrowm";
+            createTag.innerHTML = createMassage;
+            conversaionBox.appendChild(createTag)
+        }
 
 
-    conversaionBox.scrollTop = conversaionBox.scrollHeight
+        conversaionBox.scrollTop = conversaionBox.scrollHeight
 
 
-    masasgeInput.value = ''
+        masasgeInput.value = ''
     }
 })
