@@ -61,7 +61,7 @@ inputform.addEventListener('submit', (e)=>{
     if (masasgeInput.value){
     const currentDate = Date().toLocaleString();
     if (user.getAttribute('title')== 'Sender'){
-        let createMassage =
+        const createMassage =
         `<div class="senderContainer arrowm">
             <div class="sender mepop">
                 <div class="thereply">
@@ -83,7 +83,7 @@ inputform.addEventListener('submit', (e)=>{
         createTag.innerHTML = createMassage;
         conversaionBox.appendChild(createTag)
     }else{
-        createMassage = `
+        const createMassage = `
             <div class="reciver mepop">
                 <div class="thereply">
                     <p>${masasgeInput.value}</p>

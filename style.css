@@ -778,6 +778,13 @@ form > button{
     background-color: #3325d3;
     color: #fff;
 }
+.clear {
+    background-color: red;
+    color: #fff;
+}
+.disabled{
+    opacity: 0.2;
+}
 button{
     cursor: pointer;
 }
