@@ -22,9 +22,11 @@ if (sidebarStatus == 'false') {
 const hideSidebar = document.querySelector('.hideSidebar').addEventListener('click', hideSidebarFun)
 function hideSidebarFun(e) {
     if (localStorage.getItem('sidebarStatus') == 'false') {
-        console.log('Closed ')
+        const button = e.target
         sidebar.className = 'contacts'
         localStorage.setItem('sidebarStatus', 'true')
+        button.parentElement.setAttribute('title', 'Hide Sidebar')
+
     } else {
         sidebar.className = 'hide'
         const button = e.target
